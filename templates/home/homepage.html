@@ -1,0 +1,326 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "assets/css/index.css" %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body class="home-one">
+    <header id="header" >
+        <div class="top-nav">
+            <div class="top-nav-left">
+
+                <div class="top-nav-email-location">
+                    <div class="top-nav-location">
+                        <div class="top-nav-location-icon">
+                            <i class="bi bi-geo-alt-fill">
+
+                            </i>
+                        </div>
+                    </div>
+                    <div class="top-nav-email">
+                        <div class="top-nav-location-text">
+                            <p>
+                                Chichiri, Blantyre, Malawi
+                            </p>
+                        </div>
+                        <span class="line">
+
+                        </span>
+                        <div class="top-nav-email-icon">
+                            <i class="bi bi-envelope-fill">
+
+                            </i>
+                        </div>
+                        <div class="top-nav-email-text">
+                            <a href="">
+                                grptelehealth@gmail.com
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                
+                
+
+            </div>
+            <div class="top-nav-right">
+                <div class="top-nav-links">
+                    <div class="top-nav-normal-links">
+                        <a href="" class="top-nav-normal-link">
+                            Help
+                            
+                        </a>
+                        <span class="social-line">
+
+                        </span>
+
+                        <a href="" class="top-nav-normal-link">
+                            Support
+                        </a>
+                        <span class="social-line">
+
+                        </span>
+                        <a href="" class="top-nav-normal-link">
+                            Contact
+                        </a>
+
+                    </div>
+                    <div class="top-nav-social-links">
+                        <a href="" class="top-nav-social-link">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="" class="top-nav-social-link">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="" class="top-nav-social-link">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="" class="top-nav-social-link">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <nav>
+            <div class="nav-logo">
+                <a href="{% url 'homepage' %}">
+                    <img src="{% static "assets/images/logo.png" %}" alt="">
+                </a>
+
+            </div>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li class="nav-link-main active">
+                        <a href="{% url 'homepage' %}"  class="main-link">HOME</a>
+                    </li>
+                    <li class="nav-link-main">
+                        <a href="{% url 'chat' %}" class="main-link">CHAT</a>
+                    </li>
+                    <li class="nav-link-main">
+                        <a href="{% url 'book_appointment' %}" class="main-link">APPOINTMENTS</a>
+                    </li>
+                    <li class="nav-link-main">
+                        <a href="{% url 'register_page' %}" class="main-link">ACCOUNT</a>
+                    </li>
+                    
+                    
+                </ul>
+
+            </div>
+            <div class="search-contact">
+                <div class="search-contact-lines">
+                    <span class="line-one"></span>
+                    <span class="line-two"></span>
+                </div>
+                <div class="search-contact-contact">
+                    
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout_page' %}"><button>Logout</button></a>
+                    {% else %}
+                    <a href="{% url 'login_page' %}"><button>Login</button></a>
+                    {% endif %}
+                    
+                </div>
+                <div class="nav-opener">
+                    <i class="bi bi-list" id="open-nav"></i>
+                </div>
+
+            </div>
+
+        </nav>
+        <div class="mobile-nav">
+            <div class="nav-container">
+                <div class="logo-close">
+                    <img src="{% static "assets/images/logo.png" %}" alt="">
+                    <i class="bi bi-x" id="close-nav">
+
+                    </i>
+                </div>
+                <div class="mobile-links">
+                    <ul class="mobile-nav-links">
+                        <li class="mobile-nav-link-main drop-down-main active">
+                            <a href="{% url 'homepage' %}"  class="mobile-main-link">HOME
+                                
+                            </a>
+                            
+                        </li>
+                        <li class="mobile-nav-link-main">
+                            <a href="{% url 'chat' %}" class="mobile-main-link">CHAT
+                                
+                            </a>
+                        </li>
+                        <li class="mobile-nav-link-main drop-down-main">
+                            <a href="{% url 'book_appointment' %}" class="mobile-main-link">APPOINTMENT
+                                
+                            </a>
+                            
+                        </li>
+                        <li class="mobile-nav-link-main ">
+                            <a href="{% url 'register_page' %}" class="mobile-main-link border-bottom">CREATE ACCOUNT
+                                
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mobile-social-links">
+                    <a href="">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                </div>
+                <div class="mobile search-contact-contact">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout_page' %}"><button>Logout</button></a>
+                    {% else %}
+                    <a href="{% url 'login_page' %}"><button>Login</button></a>
+                    {% endif %}
+                    
+                </div>
+                
+                
+            </div>
+
+        </div>
+
+    </header>
+    <main >
+        <section class="hero-feature">
+            <div class="hero section-padding">
+                <div class="hero-content">
+                    <h2 class="blue">
+                        <i class="bi bi-chat-fill">
+
+                        </i>
+                        
+                    </h2>
+                    <h2>
+                        help online
+                    </h2>
+                    <a href="{% url 'chat' %}">
+                        <button>
+                            CHAT WITH US
+                        </button>
+                    </a>                    
+                </div>
+                <div class="banner-shape-wrap">
+                    <img class="object" src="assets/images/banner_shape01.png" data-value="-2" alt="">
+                    <img class="object" src="assets/images/banner_shape02.png" data-value="6" alt="">
+                    <img class="object" src="assets/images/banner_shape03.png" data-value="4" alt="">
+                    <img class="object" src="assets/images/banner_shape04.png" data-value="-6" alt="">
+                </div>
+    
+            </div>
+            <div class="feature ">
+                <a href="{% url 'chat' %}" class="feature-one feature-container blue">
+                    <i class="bi bi-messenger large"></i>
+                    <h5>CHAT</h5>
+                    <p>Chat with our proffesional doctors</p>
+                    <i class="bi bi-plus-square"></i>
+
+                </a>
+                <a href="{% url 'book_appointment' %}" class="feature-one feature-container">
+                    <i class="bi bi-clipboard-plus large"></i>
+                    <h5>BOOK APPOINTMENT</h5>
+                    <p>Book an appointment with us</p>
+                    <i class="bi bi-plus-square"></i>
+                    
+                </a>
+                <a href="{% url 'register_page' %}" class="feature-one feature-container blue">
+                    <i class="bi bi-person-fill large"></i>
+                    <h5>ACCOUNT</h5>
+                    <p>Create an account for easy tracking.</p>
+                    <i class="bi bi-plus-square"></i>
+                    
+                </a>
+                
+            </div>
+
+        </section>
+        
+
+    </main>
+    <a class="scroll-top scroll-to-target" id="back-to-top" href="#">
+        <i class="bi bi-chevron-up"></i>
+    </a>
+    <footer class="section-padding padding-bottom">
+        <div class="top">
+            <div class="left-container">
+                <div class="footer-heading-location">
+                  <div class="heading">
+                    <p class="bold larger">Contact Us</p>
+                  </div>
+                  <div class="list-items">
+                    <p class="not-link">Medical Clinic</p>
+                    <p class="not-link">Blantyre</p>
+                    <p class="not-link">Malawi</p>
+                    <div class="contact-info">
+                      <p class="not-link"><i class="bi bi-telephone  white"></i>&nbsp;<span class="white">Phone : </span>+265993841718</p>
+                      <p class="not-link"><i class="bi bi-envelope  white"></i>&nbsp;<span class="white">Email : </span>grptelehealth@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-heading">
+                  <div class="heading">
+                    <p class="bold larger">Useful Links</p>
+                  </div>
+                  <div class="list-items">
+                    <ul class="gray">
+                      <li><a href="{% url 'homepage' %}">Home</a></li>
+                      <li><a href="{% url 'login_page' %}">Login</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer-heading">
+                  <div class="heading">
+                    <p class="bold larger">Our Feautres</p>
+                  </div>
+                  <div class="list-items">
+                    <ul class="gray">
+                      <li><a href="{% url 'chat' %}">Chats</a></li>
+                      <li><a href="{% url 'book_appointment' %}">Appointment</a></li>
+                      
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          
+          <div class="footer-heading last">
+            <div class="logo">
+              <a href="">
+                <img src="{% static "assets/images/logo.png" %}" alt="logo">
+                
+              </a>
+              
+            </div>
+            <div class="social-links">
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-twitter"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    <script src="{% static "assets/js/main.js" %}"></script>
+    
+    
+</body>
+</html>
