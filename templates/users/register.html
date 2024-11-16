@@ -1,0 +1,126 @@
+
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+    
+    <link rel="stylesheet" href="{% static "assets/vendor/swiper/swiper-bundle.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/loginSignUp.css" %}">
+    <!-------------------Vendor CSS Files
+    <link href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "assets/vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+    ----------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <style>
+        html, body {
+          width: 100%;
+          margin: 0; 
+          padding: 0; 
+          overflow-x: hidden;
+        }
+        input#checkbox{
+            width: auto !important;
+            transform : scale(1.5);
+            margin-right: 5px;
+        }
+        .terms-and-conditions a{
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body >
+    <main>
+        <section class="form-login">
+            <div class="logo-agrera">
+                <div class="form-intro">
+                    <h2>Welcome
+                        
+                    </h2> 
+                    <h2 class="blue">
+                        <i class="bi bi-chat-dots-fill">
+
+                        </i>
+                        
+                    </h2>
+                    
+                    <div class="image-container">
+                        <a href="{% url 'homepage' %}">
+                            <img src="{% static "assets/images/logo.png" %}" alt="logo">  
+                        </a>
+                    </div> 
+                    <h6>log in to continue</h6>
+
+                </div>
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h4>Create Account</h4>
+                <div class="create-acc forgot-password">
+                    <p >Already have an account?</p>
+                    <a href="{% url 'login_page' %}" >Sign In</a>
+
+                </div>
+                <div class="inputOpt input-group">
+                    <label for="firstname"> First Name</label>
+                    <input type="text" placeholder="enter your first name" name="firstname" id="firstname">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p class="error">error</p>
+                </div>
+                 <div class="inputOpt input-group">
+                    <label for="lastname"> Last Name</label>
+                    <input type="text" placeholder="enter your last name" name="lastname" id="Lastname">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p class="error">error</p>
+                </div>
+                
+                <div class="inputOpt input-group">
+                    <label for="Username">Username</label>
+                    <input type="text" placeholder="enter your username" name="username" id="username">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p class="error">error</p>
+                </div>
+                
+                <div class="inputOpt input-group ">
+                    <label for="number">Phone number(e.g +265***)</label>
+                    <input type="text" placeholder="active phonenumber" name="phonenumber" id="phonenumber">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p class="error">error</p>
+                </div>
+                <div class="inputOpt input-group ">
+                    <label for="Password">Password</label>
+                    <input autocomplete="off" type="password" id="password" placeholder="Enter password" name="password">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p class="error">error</p>
+                </div>
+                <div class="inputOpt input-group">
+                    <label for="confirm-password">Confirm password</label>
+                    <input autocomplete="off" type="password" id="confirm_password" placeholder="confirm password" name="confirm_password">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p class="error">error</p>
+                </div>
+                                               
+                <div class="login-signup-btn">
+                    <button type="submit">Create Account</button>   
+                </div>
+              </form>
+            
+        </section>
+        
+        
+        
+    </main>
+    
+    <script src="{% static "assets/js/main.js" %}"></script>
+    
+</body>
+</html>

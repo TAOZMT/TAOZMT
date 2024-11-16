@@ -1,0 +1,82 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+    
+    <link rel="stylesheet" href="{% static "assets/vendor/swiper/swiper-bundle.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/loginSignUp.css" %}">
+    <!-------------------Vendor CSS Files
+    <link href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "assets/vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+    ----------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <style>
+        html, body {
+          width: 100%;
+          margin: 0; 
+          padding: 0; 
+          overflow-x: hidden;
+        }
+    </style>
+</head>
+<body >
+    <main>
+        <section class="form-login">
+            <div class="logo-agrera">
+                <div class="form-intro">
+                    <h2>Welcome
+                        
+                    </h2> 
+                    <h2 class="blue">
+                        <i class="bi bi-chat-dots-fill">
+
+                        </i>
+                        
+                    </h2>
+                    
+                    <div class="image-container">
+                        <a href="{% url 'homepage' %}">
+                            <img src="{% static "assets/images/logo.png" %}" alt="logo">  
+                        </a>
+                    </div> 
+                    <h6>log in to continue</h6>
+
+                </div>
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h3>Login</h3>
+                <div class="create-acc forgot-password">
+                    <p >New to medical clinic?</p>
+                    <a href="{% url 'register_page' %}" >Create Account</a>
+                </div>
+                
+                
+                <div class="inputOpt">
+                    <input type="text"  name="username" id="username" required>
+                    <span>Enter  Username</span>
+                </div>
+                <div class="inputOpt">
+                    <input autocomplete="off" type="password" id="password"  name="password" required>
+                    <span>Enter Password</span>
+                </div>
+                                
+                <div class="login-signup-btn">
+                    <button type="submit">login</button>   
+                </div>
+              </form>
+            
+        </section>
+        
+        
+        
+    </main>
+    
+    <script src="{% static "assets/js/main.js" %}"></script>
+    
+</body>
+</html>
